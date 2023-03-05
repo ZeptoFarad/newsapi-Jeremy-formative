@@ -2,7 +2,7 @@
 <!-- HTML -->
  <main>
 <div class="searchBar">
-<h3>Search:</h3>
+<h3>Component Search:</h3>
 <input type="text">
 </div>
 <div class="button_wrapper">

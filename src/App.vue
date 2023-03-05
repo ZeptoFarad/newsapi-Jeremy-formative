@@ -11,7 +11,7 @@ import displayArticle from "./components/myArticles.vue"
    <nav>
       <navComponent /> 
       <div class="searchBar">
-        <h3>Search:</h3>
+        <h3>Nested Search:</h3>
         <input type="text" placeholder="Put Search In Here" v-model="search_query">
         </div>
 <div class="button_wrapper">
@@ -24,8 +24,8 @@ import displayArticle from "./components/myArticles.vue"
     
   <main>
    <div>
-    <searchAndAccept class="displayNone"/>
-    <buttonSuggestions class="displayNone"/>
+    <searchAndAccept/>
+    <!-- <buttonSuggestions class="displayNone"/> -->
     <displayArticle v-for="article in theNews" :articleProp="article"/>
     
 
@@ -48,14 +48,14 @@ export default {
   ,
   methods:{
      async getNewsAritcles(){
-      const resp = await fetch('https://newsapi.org/v2/top-headlines?q='+this.search_query+'&from=2023-01-23&sortBy=publishedAt&apiKey=5b0f374897634f93bde27ae8325c18ae')
+      const resp = await fetch('https://newsapi.org/v2/top-headlines?q='+this.search_query+'&from=2023-03-02&sortBy=publishedAt&apiKey=5b0f374897634f93bde27ae8325c18ae')
       const data = await resp.json()
       console.log(data)
       this.theNews = data.articles;
     }
   },
   created(){
-    // this.getNewsAritcles();
+    // s
     
   }
 }
